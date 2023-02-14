@@ -1,4 +1,10 @@
+import * as TodoModel from "../model/todo.model.js";
 
-export function getAllTodos(request, response) {
-    response.send({success: true});
+
+
+export async function getAllTodos(request, response) {
+
+    let todos = await TodoModel.getAll();
+
+    response.send(todos);
 }
